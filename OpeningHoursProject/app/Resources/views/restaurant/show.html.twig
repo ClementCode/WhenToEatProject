@@ -3,19 +3,6 @@
 {% block body %}
     <h1>{{ restaurant.name }}</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ restaurant.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ restaurant.name }}</td>
-            </tr>
-        </tbody>
-    </table>
-
     <ul>
         <li>
             <a href="{{ path('restaurant_index') }}">Back to the list</a>
