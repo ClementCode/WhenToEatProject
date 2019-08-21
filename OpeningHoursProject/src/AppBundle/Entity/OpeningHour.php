@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class OpeningHour
 {
     /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Restaurant")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $restaurant;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
