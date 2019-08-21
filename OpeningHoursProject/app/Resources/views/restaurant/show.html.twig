@@ -5,14 +5,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('restaurant_index') }}">Back to the list</a>
+            <a href="{{ path('restaurant_index') }}">Retour</a>
         </li>
         <li>
-            <a href="{{ path('restaurant_edit', { 'id': restaurant.id }) }}">Edit</a>
+            <a href="{{ path('restaurant_edit', { 'id': restaurant.id }) }}">Modifier ce restaurant</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer ce restaurant">
             {{ form_end(delete_form) }}
         </li>
     </ul>
