@@ -19,6 +19,12 @@ class OpeningHour
     private $restaurant;
 
     /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Weekday")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $weekday;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
