@@ -3,6 +3,23 @@
 {% block body %}
     <h1>{{ restaurant.name }}</h1>
 
+    <h3>Horaires d'ouverture</h3>
+    <table>
+        <thead>
+            <tr>
+                <td>Jour</td>
+                <td>Heures</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for openingHour in openingHours %}
+            <tr>
+                <td>{{ openingHour.weekday }}</td>
+                <td>{{ openingHour.hours }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
     <ul>
         <li>
             <a href="{{ path('restaurant_index') }}">Retour</a>
