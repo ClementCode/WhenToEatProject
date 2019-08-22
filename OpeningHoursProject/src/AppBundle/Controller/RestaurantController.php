@@ -66,9 +66,13 @@ class RestaurantController extends Controller
     public function showAction(Restaurant $restaurant)
     {
         $deleteForm = $this->createDeleteForm($restaurant);
+        $em = $this->getDoctrine()->getManager();
+
+        $openingHours = $em->getRepository('AppBundle:OpeningHour')->findOrderedHoursbyRestaurant($restaurant);
 
         return $this->render('restaurant/show.html.twig', array(
             'restaurant' => $restaurant,
+            'openingHours' => $openingHours,
             'delete_form' => $deleteForm->createView(),
         ));
     }
