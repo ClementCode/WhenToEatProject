@@ -10,4 +10,13 @@ namespace AppBundle\Repository;
  */
 class OpeningHourRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findOrderedHoursbyRestaurant($restaurant){
+        $query = $this->createQueryBuilder('hours')
+            ->select('hours')
+            ->where('hours.restaurant = :restaurant')
+            ->orderBy('hours.weekday')
+            ->setParameter('restaurant', $restaurant)
+            ->getQuery();
+        return $query->getResult();
+    }
 }
