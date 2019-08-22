@@ -48,7 +48,7 @@ class OpeningHourController extends Controller
             $em->persist($openingHour);
             $em->flush();
 
-            return $this->redirectToRoute('openinghour_show', array('id' => $openingHour->getId()));
+            return $this->redirectToRoute('restaurant_index');
         }
 
         return $this->render('openinghour/new.html.twig', array(
@@ -88,7 +88,7 @@ class OpeningHourController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('openinghour_edit', array('id' => $openingHour->getId()));
+            return $this->redirectToRoute('restaurant_index');
         }
 
         return $this->render('openinghour/edit.html.twig', array(
@@ -115,7 +115,7 @@ class OpeningHourController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('openinghour_index');
+        return $this->redirectToRoute('restaurant_index');
     }
 
     /**
