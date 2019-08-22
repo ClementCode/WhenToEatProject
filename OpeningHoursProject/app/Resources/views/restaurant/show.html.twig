@@ -16,6 +16,9 @@
             <tr>
                 <td>{{ openingHour.weekday }}</td>
                 <td>{{ openingHour.hours }}</td>
+                <td>
+                    <a href="{{ path('openinghour_edit', { 'id': openingHour.id }) }}">Modifier cet horaire</a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
