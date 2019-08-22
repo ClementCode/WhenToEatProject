@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Openinghours list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hours</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for openingHour in openingHours %}
+            <tr>
+                <td><a href="{{ path('openinghour_show', { 'id': openingHour.id }) }}">{{ openingHour.id }}</a></td>
+                <td>{{ openingHour.hours }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('openinghour_show', { 'id': openingHour.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('openinghour_edit', { 'id': openingHour.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('openinghour_new') }}">Create a new openingHour</a>
+        </li>
+    </ul>
+{% endblock %}
