@@ -12,6 +12,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Weekday
 {
+    /*
+     * Code added manually.
+     */
+    public function __toString() {
+        return $this->day;
+    }
+
+    /*
+     * Code generated automatically
+     */
     /**
      * @var int
      *

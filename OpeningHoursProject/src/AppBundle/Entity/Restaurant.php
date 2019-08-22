@@ -12,6 +12,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Restaurant
 {
+    /*
+     * Code added manually.
+     */
+    public function __toString() {
+        return $this->name;
+    }
+
+    /*
+     * Code generated automatically
+     */
     /**
      * @var int
      *
