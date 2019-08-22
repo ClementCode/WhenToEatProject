@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Openinghours list</h1>
+    <h1>Liste des horaires</h1>
 
     <table>
         <thead>
@@ -19,10 +19,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('openinghour_show', { 'id': openingHour.id }) }}">show</a>
+                            <a href="{{ path('openinghour_show', { 'id': openingHour.id }) }}">Voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('openinghour_edit', { 'id': openingHour.id }) }}">edit</a>
+                            <a href="{{ path('openinghour_edit', { 'id': openingHour.id }) }}">Modifier cet horaire</a>
                         </li>
                     </ul>
                 </td>
@@ -33,7 +33,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('openinghour_new') }}">Create a new openingHour</a>
+            <a href="{{ path('openinghour_new') }}">Créer un nouvel horaire</a>
         </li>
     </ul>
 {% endblock %}
