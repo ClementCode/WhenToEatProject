@@ -15,23 +15,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 class OpeningHourController extends Controller
 {
     /**
-     * Lists all openingHour entities.
-     *
-     * @Route("/", name="openinghour_index")
-     * @Method("GET")
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $openingHours = $em->getRepository('AppBundle:OpeningHour')->findAll();
-
-        return $this->render('openinghour/index.html.twig', array(
-            'openingHours' => $openingHours,
-        ));
-    }
-
-    /**
      * Creates a new openingHour entity.
      *
      * @Route("/new", name="openinghour_new")
