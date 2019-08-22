@@ -74,5 +74,52 @@ class OpeningHour
     {
         return $this->hours;
     }
-}
 
+    /**
+     * Set restaurant
+     *
+     * @param \AppBundle\Entity\Restaurant $restaurant
+     *
+     * @return OpeningHour
+     */
+    public function setRestaurant(\AppBundle\Entity\Restaurant $restaurant)
+    {
+        $this->restaurant = $restaurant;
+
+        return $this;
+    }
+
+    /**
+     * Get restaurant
+     *
+     * @return \AppBundle\Entity\Restaurant
+     */
+    public function getRestaurant()
+    {
+        return $this->restaurant;
+    }
+
+    /**
+     * Set weekday
+     *
+     * @param \AppBundle\Entity\Weekday $weekday
+     *
+     * @return OpeningHour
+     */
+    public function setWeekday(\AppBundle\Entity\Weekday $weekday)
+    {
+        $this->weekday = $weekday;
+
+        return $this;
+    }
+
+    /**
+     * Get weekday
+     *
+     * @return \AppBundle\Entity\Weekday
+     */
+    public function getWeekday()
+    {
+        return $this->weekday;
+    }
+}

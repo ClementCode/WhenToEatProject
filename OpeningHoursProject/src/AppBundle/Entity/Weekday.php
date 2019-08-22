@@ -63,4 +63,3 @@ class Weekday
         return $this->day;
     }
 }
-

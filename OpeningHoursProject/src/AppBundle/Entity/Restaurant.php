@@ -63,4 +63,3 @@ class Restaurant
         return $this->name;
     }
 }
-
