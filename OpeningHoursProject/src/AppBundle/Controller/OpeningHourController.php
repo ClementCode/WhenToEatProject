@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Openinghour controller.
  *
- * @Route("openinghour")
+ * @Route("restaurant/openinghour")
  */
 class OpeningHourController extends Controller
 {
