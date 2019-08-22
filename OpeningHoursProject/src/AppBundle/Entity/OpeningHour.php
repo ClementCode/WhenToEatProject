@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class OpeningHour
 {
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Restaurant")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Restaurant", inversedBy="openingHours")
      * @ORM\JoinColumn(nullable=false)
      */
     private $restaurant;

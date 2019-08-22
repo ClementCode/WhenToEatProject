@@ -19,6 +19,11 @@ class Restaurant
         return $this->name;
     }
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\OpeningHour", mappedBy="restaurant")
+     */
+    private $openingHours;
+
     /*
      * Code generated automatically
      */
@@ -71,5 +76,47 @@ class Restaurant
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->openingHours = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add openingHour
+     *
+     * @param \AppBundle\Entity\OpeningHour $openingHour
+     *
+     * @return Restaurant
+     */
+    public function addOpeningHour(\AppBundle\Entity\OpeningHour $openingHour)
+    {
+        $this->openingHours[] = $openingHour;
+
+        return $this;
+    }
+
+    /**
+     * Remove openingHour
+     *
+     * @param \AppBundle\Entity\OpeningHour $openingHour
+     */
+    public function removeOpeningHour(\AppBundle\Entity\OpeningHour $openingHour)
+    {
+        $this->openingHours->removeElement($openingHour);
+    }
+
+    /**
+     * Get openingHours
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOpeningHours()
+    {
+        return $this->openingHours;
     }
 }
